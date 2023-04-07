@@ -1,0 +1,182 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>KYC Form</h2>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <button
+          class="btn btn-default"
+          style="margin-left: 4px"
+          (click)="openCamera()"
+        >
+          Take Picture
+        </button>
+        <div
+          *ngIf="kycForm.controls['imageURL'].value"
+          style="
+            border: 1px solid;
+            width: 200px;
+            height: 200px;
+            margin-top: 5px;
+            margin-left: 4px;
+          "
+        >
+          <img
+            src="{{ kycForm.controls['imageURL'].value }}"
+            style="width: 200px; height: 200px"
+          />
+        </div>
+      </div>
+      <div data-role="content" style="padding: 4px">
+        <button class="btn btn-default" (click)="startRecording()">
+          Record Audio
+        </button>
+      </div>
+      <form [formGroup]="kycForm" (submit)="submitKycForm()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="fullname"
+            name="fullname"
+          />
+          <div *ngIf="kycForm.controls['fullname'].errors" style="color: red">
+            Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">DOB:</label>
+          <input
+            type="date"
+            formControlName="dob"
+            class="form-control"
+            name="dob"
+          />
+          <div *ngIf="kycForm.controls['dob'].errors" style="color: red">
+            DOB is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" formControlName="email" class="form-control" />
+          <div *ngIf="kycForm.controls['email'].errors" style="color: red">
+            Email is required
+          </div>
+          <div *ngIf="kycForm.controls['email'].errors" style="color: red">
+            Email must be a valid email address
+          </div>
+        </div>
+        <h2>Address:</h2>
+        <h4>Address 1</h4>
+        <div class="form-group">
+          <label for="addressLine1">Line 1:</label>
+          <input
+            type="text"
+            formControlName="addressLine1"
+            class="form-control"
+            name="addressLine1"
+          />
+        </div>
+        <div class="form-group">
+          <label for="addressLine2">Line 2:</label>
+          <input
+            type="text"
+            formControlName="addressLine2"
+            class="form-control"
+            name="addressLine2"
+          />
+        </div>
+        <div class="form-group">
+          <label for="addressCity">City:</label>
+          <input
+            type="text"
+            formControlName="addressCity"
+            class="form-control"
+            name="addressCity"
+          />
+        </div>
+        <div class="form-group">
+          <label for="addressState">State:</label>
+          <select
+            class="form-select form-control"
+            formControlName="addressState"
+            name="addressState"
+          >
+            <option>Select State</option>
+            <option value="Gujrat">Gujrat</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Haryana">Haryana</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="addressPincode">Pincode:</label>
+          <input
+            type="text"
+            formControlName="addressPincode"
+            class="form-control"
+            name="addressPincode"
+          />
+        </div>
+        <h4>Address 2</h4>
+        <div class="form-group">
+          <label for="address2Line1">Line 1:</label>
+          <input
+            type="text"
+            formControlName="address2Line1"
+            class="form-control"
+            name="address2Line1"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address2Line2">Line 2:</label>
+          <input
+            type="text"
+            formControlName="address2Line2"
+            class="form-control"
+            name="address2Line2"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address2City2">City:</label>
+          <input
+            type="text"
+            formControlName="address2City2"
+            class="form-control"
+            name="address2City2"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address2State2">State:</label>
+          <select
+            class="form-select form-control"
+            formControlName="address2State2"
+            name="address2State2"
+          >
+            <option>Select State</option>
+            <option value="Gujrat">Gujrat</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Haryana">Haryana</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="address2Pincode2">Pincode:</label>
+          <input
+            type="text"
+            formControlName="address2Pincode2"
+            class="form-control"
+            name="address2Pincode2"
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="form-control btn btn-primary">
+            Submit and Preview
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

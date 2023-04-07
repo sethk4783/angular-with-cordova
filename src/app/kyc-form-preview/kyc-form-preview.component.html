@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>KYC Preview</h2>
+    </div>
+    <div class="col-md-12">
+      <form>
+        <div class="form-group">
+          <ul>
+            <li>
+              <img
+                src="{{ data.imageURL }}"
+                style="width: 200px; height: 200px"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="form-group">
+          <audio controls>
+            <source src="{{ data.audioURL }}" />
+          </audio>
+        </div>
+        <div class="form-group">
+          <label for="createdAt">Name: </label
+          ><span style="margin-left: 25px">{{ data.fullname }}</span>
+        </div>
+        <div class="form-group">
+          <label for="dob">DOB: </label
+          ><span style="margin-left: 25px">{{ data.dob }}</span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email: </label
+          ><span style="margin-left: 25px">{{ data.email }}</span>
+        </div>
+        <h2>Address:</h2>
+        <h4>Address 1</h4>
+        <div class="form-group">
+          <label for="addressLine1">Line 1: </label
+          ><span style="margin-left: 25px">{{ data.addressLine1 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressLine2">Line 2: </label
+          ><span style="margin-left: 25px">{{ data.addressLine2 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressCity">City: </label
+          ><span style="margin-left: 25px">{{ data.addressCity }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressState">State: </label
+          ><span style="margin-left: 25px">{{ data.addressState }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressPincode">Pincode: </label
+          ><span style="margin-left: 25px">{{ data.addressPincode }}</span>
+        </div>
+        <h4>Address 2</h4>
+        <div class="form-group">
+          <label for="addressLine1">Line 1: </label
+          ><span style="margin-left: 25px">{{ data.address2Line1 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressLine2">Line 2: </label
+          ><span style="margin-left: 25px">{{ data.address2Line2 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressCity">City: </label
+          ><span style="margin-left: 25px">{{ data.address2City2 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressState">State: </label
+          ><span style="margin-left: 25px">{{ data.address2State2 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="addressPincode">Pincode: </label
+          ><span style="margin-left: 25px">{{ data.address2Pincode2 }}</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
